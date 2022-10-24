@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/my-element.ts"></script>
+  </head>
+  <body>
+    <button onclick="handleChange()">change</button>
+    <my-element locale="fa"></my-element>
+  </body>
+
+  <script>
+    const el = document.querySelector("my-element");
+    console.log({ el });
+
+    let locale = "fa";
+    const handleChange = () => {
+      console.log("handle change");
+      if (locale === "fa") {
+        locale = "en";
+        el.locale = "en";
+      } else {
+        locale = "fa";
+        el.locale = "fa";
+      }
+    };
+  </script>
+</html>
