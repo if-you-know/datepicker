@@ -18,6 +18,6 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "test/my-elements.tets.ts"],
+  "include": ["src/**/*.ts", "test/xox-datepickers.tets.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

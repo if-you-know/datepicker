@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import '../src/my-button/my-button.ts';
+import '../src/xox-datepicker';
 
 describe('Button with increment', async () => {
   function getInsideButton(): HTMLElement | null | undefined {

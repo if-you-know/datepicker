@@ -3,10 +3,10 @@ import { customElement, property } from "lit/decorators.js";
 
 import "./date/xox-date";
 
-@customElement("my-element")
+@customElement("xox-datepicker")
 export class MyElement extends LitElement {
   @property({ type: String, attribute: true })
-  locale: string = "fa";
+  locale: string = "en";
 
   @property({ type: Number, attribute: true })
   timestamp: number = 0;
@@ -37,6 +37,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "my-element": MyElement;
+    "xox-datepicker": MyElement;
   }
 }

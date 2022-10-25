@@ -14,8 +14,9 @@ import "dayjs/locale/en-au";
 
 @customElement("xox-date")
 export class xoxDate extends LitElement {
+  // PROPERTIES
   @property({ type: String, attribute: true })
-  locale: string | undefined;
+  locale: string = 'en';
 
   @property({ type: Boolean, reflect: true })
   sth: boolean | undefined;
@@ -26,22 +27,6 @@ export class xoxDate extends LitElement {
   @property({ type: Boolean, reflect: true })
   value: boolean | undefined;
 
-  // @property({ type: String, attribute: true })
-  // year: string | undefined;
-
-  // @property({ type: Array<String>, attribute: true })
-  // months: string[] | undefined;
-
-  // @property({ type: Number, attribute: true })
-  // numberOfDaysInMonth: number = 30;
-
-  // @property({ type: Number, attribute: true })
-  // indexOfDayInWeek: number | undefined;
-
-  _handleClick = () => {
-    this.timestamp += 1;
-    this.dispatchChange();
-  };
 
   // EVENTS
   dispatchChange() {
@@ -53,6 +38,13 @@ export class xoxDate extends LitElement {
     );
   }
 
+  // HANDLERS
+  _handleClick = () => {
+    this.timestamp += 1;
+    this.dispatchChange();
+  };
+
+  // RENDER
   render() {
 
 

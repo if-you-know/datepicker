@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.ts"></script>
+    <script type="module" src="/src/xox-datepicker.ts"></script>
   </head>
   <body>
     <button onclick="handleChange()">change</button>
-    <my-element locale="fa"></my-element>
+    <xox-datepicker locale="fa"></xox-datepicker>
   </body>
 
   <script>
-    const el = document.querySelector("my-element");
+    const el = document.querySelector("xox-datepicker");
     console.log({ el });
 
     let locale = "fa";

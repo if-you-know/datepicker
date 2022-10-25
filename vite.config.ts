@@ -10,7 +10,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: "src/my-element.ts",
+      entry: "src/xox-datepicker.ts",
       formats: ["es"],
     },
     rollupOptions: {
