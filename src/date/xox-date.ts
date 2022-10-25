@@ -46,8 +46,6 @@ export class xoxDate extends LitElement {
 
   // RENDER
   render() {
-
-
     d.extend(localeDate);
     d.extend(dj);
     d.extend(weekday);
