@@ -1,3 +1,4 @@
+// @ts-ignore
 import JALALI from "jalaali-js";
 
 const localeObject = {
@@ -10,7 +11,7 @@ const localeObject = {
       "_"
     ),
   monthsShort: "فرو_ارد_خرد_تیر_مرد_شهر_مهر_آبا_آذر_دی_بهم_اسف".split("_"),
-  oridinal: (n) => `${n}ام`,
+  oridinal: (n : string) => `${n}ام`,
   relativeTime: {
     future: "در %s",
     past: "%s قبل",
@@ -26,7 +27,7 @@ const localeObject = {
     y: "یک سال",
     yy: "%d سال",
   },
-};
+} as const;
 
 const REGEX_PARSE =
   /^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])(\D?([01]\d|2[0-3])\D?([0-5]\d)\D?([0-5]\d)?\D?(\d{3})?([zZ]|([+-])([01]\d|2[0-3])\D?([0-5]\d)?)?)?$/;
