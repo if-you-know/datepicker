@@ -12,11 +12,18 @@ import timezone from "dayjs/plugin/timezone";
 
 import "dayjs/locale/en-au";
 
+d.extend(localeDate);
+d.extend(dj);
+d.extend(weekday);
+d.extend(isoWeek);
+d.extend(utc);
+d.extend(timezone);
+
 @customElement("xox-date")
 export class xoxDate extends LitElement {
   // PROPERTIES
   @property({ type: String, attribute: true })
-  locale: string = 'en';
+  locale: string = "en";
 
   @property({ type: Boolean, reflect: true })
   sth: boolean | undefined;
@@ -26,7 +33,6 @@ export class xoxDate extends LitElement {
 
   @property({ type: Boolean, reflect: true })
   value: boolean | undefined;
-
 
   // EVENTS
   dispatchChange() {
@@ -46,16 +52,19 @@ export class xoxDate extends LitElement {
 
   // RENDER
   render() {
-    d.extend(localeDate);
-    d.extend(dj);
-    d.extend(weekday);
-    d.extend(isoWeek);
-    d.extend(utc);
-    d.extend(timezone);
-    
-    
+    d.utc().tz(Intl.DateTimeFormat().resolvedOptions().timeZone, true);
+    // d.utc().tz('America/Metlakatla', true);
+    d.locale(this.locale);
+    const _d = d();
+    const year = _d.format("YYYY");
+    const month = _d.format("MM");
 
-    // console.log(this.locale);
+    console.log({ _d, d });
+
+    console.log(typeof month);
+    // console.log(_d.utc().format("d"));
+
+    const months = d.months();
 
     // const _d = d("2022/01/02", "YYYY/MM/DD")
     //   .locale(this.locale);
@@ -63,8 +72,6 @@ export class xoxDate extends LitElement {
     // const globalLocaleData = _d.localeData();
 
     // _d.tz(Intl.DateTimeFormat().resolvedOptions().timeZone, true);
-
-    // console.log(_d.utc().format('d'));
 
     // console.log(_d.utc().daysInMonth())
 
@@ -94,7 +101,18 @@ export class xoxDate extends LitElement {
     //   })}
     // `;
 
-    return html` <button @click=${this._handleClick}>click</button> `;
+    // return html` <button @click=${this._handleClick}>click</button> `;
+
+    return html`
+      <div>
+        <p>${year}</p>
+        <select>
+          ${months?.map((month) => {
+            return html`<option>${month}</option>`;
+          })}
+        </select>
+      </div>
+    `;
   }
 }
 
