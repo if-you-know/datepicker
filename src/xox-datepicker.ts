@@ -4,7 +4,7 @@ import { customElement, property } from "lit/decorators.js";
 import "./date/xox-date";
 
 @customElement("xox-datepicker")
-export class MyElement extends LitElement {
+export class XoxDatepicker extends LitElement {
   @property({ type: String, attribute: true })
   locale: string = "en";
 
@@ -15,12 +15,12 @@ export class MyElement extends LitElement {
   value: string = "";
 
   // HANDLERS
-  _update = (e:CustomEvent) => { 
+  _update = (e: CustomEvent) => {
     const d = e.detail;
-    if (d) { 
-      console.log(d)
+    if (d) {
+      console.log(d);
     }
-  }
+  };
 
   render() {
     return html`
@@ -37,6 +37,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "xox-datepicker": MyElement;
+    "xox-datepicker": XoxDatepicker;
   }
 }
