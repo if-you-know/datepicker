@@ -14,19 +14,19 @@
   </body>
 
   <script>
-    const el = document.querySelector("xox-datepicker");
-    console.log({ el });
+    const el = document.querySelector('xox-datepicker')
+    console.log({ el })
 
-    let locale = "fa";
+    let locale = 'fa'
     const handleChange = () => {
-      console.log("handle change");
-      if (locale === "fa") {
-        locale = "en";
-        el.locale = "en";
+      console.log('handle change')
+      if (locale === 'fa') {
+        locale = 'en'
+        el.locale = 'en'
       } else {
-        locale = "fa";
-        el.locale = "fa";
+        locale = 'fa'
+        el.locale = 'fa'
       }
-    };
+    }
   </script>
 </html>

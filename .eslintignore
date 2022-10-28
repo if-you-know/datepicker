@@ -1,0 +1,5 @@
+build
+coverage
+types
+**/*.test.ts
+/src/date/j.ts
