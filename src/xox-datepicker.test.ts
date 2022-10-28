@@ -1,31 +1,31 @@
-import { beforeEach, describe, expect, it, vi, test } from "vitest";
-import { XoxDatepicker } from "../src/xox-datepicker";
-import "../src/xox-datepicker";
+import { beforeEach, describe, expect, it, vi, test } from 'vitest'
+import { XoxDatepicker } from '../src/xox-datepicker'
+import '../src/xox-datepicker'
 
-describe("xox-datepicker defaults", async () => {
+describe('xox-datepicker defaults', async () => {
   function getDatepicker(): XoxDatepicker | null | undefined {
-    return document.body.querySelector("xox-datepicker");
+    return document.body.querySelector('xox-datepicker')
   }
 
   // ?.shadowRoot?.querySelector("button");
 
   beforeEach(async () => {
-    document.body.innerHTML = "<xox-datepicker></xox-datepicker>";
+    document.body.innerHTML = '<xox-datepicker></xox-datepicker>'
     await new Promise<void>((resolve) => {
       const interval = setInterval(() => {
         if (getDatepicker()) {
-          clearInterval(interval);
-          resolve();
+          clearInterval(interval)
+          resolve()
         }
-      });
-    });
-  });
+      })
+    })
+  })
 
-  test("datepicker default values", () => {
-    expect(getDatepicker()?.locale).toBe("en");
-    expect(getDatepicker()?.timestamp).toBe(0);
-    expect(getDatepicker()?.value).toBe("");
-  });
+  test('datepicker default values', () => {
+    expect(getDatepicker()?.locale).toBe('en')
+    expect(getDatepicker()?.timestamp).toBe(0)
+    expect(getDatepicker()?.value).toBe('')
+  })
 
   // it('should increment the count on each click', () => {
   //   getInsideButton()?.click();
@@ -48,4 +48,4 @@ describe("xox-datepicker defaults", async () => {
 
   //   expect(spyClick).toHaveBeenCalled();
   // });
-});
+})
