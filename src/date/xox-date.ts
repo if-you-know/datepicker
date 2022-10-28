@@ -1,14 +1,14 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import d from 'dayjs'
-import dj from './j'
 
 import localeDate from 'dayjs/plugin/localeData'
 import weekday from 'dayjs/plugin/weekday'
 import isoWeek from 'dayjs/plugin/isoWeek'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
+import dj from './j.js'
 
 import 'dayjs/locale/en-au'
 
@@ -107,9 +107,7 @@ export class xoxDate extends LitElement {
       <div>
         <p>${year}</p>
         <select>
-          ${months?.map((month) => {
-            return html`<option>${month}</option>`
-          })}
+          ${months?.map((m) => html`<option>${m}</option>`)}
         </select>
       </div>
     `

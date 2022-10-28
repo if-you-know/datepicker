@@ -22,6 +22,7 @@ module.exports = {
     'class-methods-use-this': ['error', { enforceForClassFields: false }],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'no-console': 'off',
     // 'import/extensions': [
     //   'error',
     //   'always',

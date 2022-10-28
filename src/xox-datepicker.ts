@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import './date/xox-date'
+import './date/xox-date.ts'
 
 @customElement('xox-datepicker')
 export class XoxDatepicker extends LitElement {

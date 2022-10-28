@@ -1,4 +1,5 @@
 build
 coverage
 types
-**/*.ts
+**/*.test.ts
+/src/date/j.ts
