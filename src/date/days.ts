@@ -16,4 +16,26 @@ d.extend(isoWeek)
 d.extend(utc)
 d.extend(timezone)
 
-export default d
+type THelperParams = { locale: string; timestamp?: number }
+export type THelper = (params: THelperParams) => {
+  months: string[]
+  month: string
+  year: string
+}
+export const helpers: THelper = ({ locale, timestamp }) => {
+  d.utc().tz(Intl.DateTimeFormat().resolvedOptions().timeZone, true)
+  // d.utc().tz('America/Metlakatla', true);
+  d.locale(locale)
+
+  const _d = timestamp ? d(timestamp) : d()
+
+  const months = d.months()
+  const year = _d.format('YYYY')
+  const month = _d.format('MM')
+
+  return {
+    months,
+    year,
+    month,
+  }
+}
